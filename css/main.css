@@ -1,0 +1,116 @@
+.wrapper-calendar {
+    width: 450px;
+    background: #c3c3c3;
+    border-radius: 10px;
+}
+.wrapper-calendar header {
+    display: flex;
+    align-items: center;
+    padding: 25px 30px 0px;
+    justify-content: space-between;
+}
+.currentDate {
+    font-size: 1.25rem;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+}
+header .icons span {
+    height: 38px;
+    width: 38px;
+    color: #878787;
+    font-size: 1.9rem;
+    margin: 0 1px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 38px;
+    border-radius: 50%;
+}
+header .icons span:hover {
+    background: #aeaeae;
+}
+header .icons span:last-child {
+    margin-right: -10px;
+}
+.calendar ul {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    text-align: center;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+p {
+    margin: 0;
+    padding: 0;
+}
+.calendar li {
+    padding-left: 0; /* Padding vorne entfernen */
+}
+.calendar ul li{
+    position: relative;
+    width: calc(100%/7);
+}
+.calendar .days li{
+    z-index: 1;
+    cursor: pointer;
+    margin-top: 30px;
+}
+.calendar .days li::before{
+    position: absolute;
+    content: "";
+    height: 40px;
+    width: 40px;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    border-radius: 50%;
+    transform: translate(-50%,-50%);
+}
+.days li:hover:before {
+    background: #878787;
+}
+.calendar{
+    padding: 20px;
+}
+.calendar .days {
+    margin-bottom: 20px;
+}
+.calendar .weeks li{
+    font-weight: 500;
+}
+.days li.inactive{
+    color: #aaa; /* <li class="inactive">1</li> */
+    cursor: default;
+    pointer-events: none;
+}
+.days li.active{
+    color: #000000;
+}
+.days li.active::before {
+    background: #f2f2f2;
+}
+.days li.weekend {
+    color: #aaa; 
+    cursor: default;
+    pointer-events: none; 
+}
+body {
+    font-family: 'Poppins', sans-serif;
+}
+header .icons span:not(.inactive) {
+    opacity: 1; /* Setze die Opazität auf 100% */
+    cursor: pointer; /* Aktiviere den Cursor */
+    pointer-events: auto; /* Aktiviere die Ereignisbearbeitung */
+}
+header .icons span.inactive {
+    opacity: 0.5; /* Setze die Opazität auf 50% */
+    cursor: default; /* Deaktiviere den Cursor */
+    pointer-events: none; /* Deaktiviere die Ereignisbearbeitung */
+}
+
+/* Füge einen spezifischen Stil für den deaktivierten Zustand hinzu */
+header .icons span.inactive:hover {
+    background: none;
+}
